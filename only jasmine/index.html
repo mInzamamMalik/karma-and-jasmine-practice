@@ -1,0 +1,84 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
+</head>
+<body>
+</body>
+
+
+<script type="text/javascript">
+
+    describe('calculator', function () {
+        it('sum test',function(){
+
+            expect( calculator.sum(1,1)         )  .toBe(2);
+            expect( calculator.sum(2.5 , 2.5)   )  .toBe(5);
+            expect( calculator.sum("2" , 2)     )  .toBe(4);
+            expect( calculator.sum(2 , "2")     )  .toBe(4);
+            expect( calculator.sum("2" , "4")   )  .toBe(6);
+            expect( calculator.sum("abc","4")   )  .toBe(null);
+            expect( calculator.sum("abc","ssa")   )  .toBe(null);
+            expect( calculator.sum(2)           )  .toBe(null);
+
+        });
+
+        it('subtract test',function(){
+            expect(calculator.subtract(1,1)).toBe(0);
+            expect(calculator.subtract(2,3)).toBe(-1);
+            expect(calculator.subtract("2",3)).toBe(-1);
+            expect(calculator.subtract(2,"3")).toBe(-1);
+            expect(calculator.subtract("2","3")).toBe(-1);
+            expect(calculator.subtract("abc","4")).toBe(null);
+            expect(calculator.subtract("abc","ssa")).toBe(null);
+            expect(calculator.subtract(3)).toBe(null);
+
+        })
+    });
+
+    calculator = {
+        sum : function(x,y){
+
+            if(isNaN(x)||isNaN(y)){
+                return null;
+            }
+            if(typeof x == "string" || typeof y == "string") {
+                return (x - 1) + (y - 1) + 2;
+            }
+            return x+y;
+        },
+
+
+        subtract : function(x,y){
+            if(isNaN(x) || isNaN(y)){
+                return null;
+            }
+            return x-y;
+        }
+    }
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
