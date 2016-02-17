@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "author": "",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+
   "license": "ISC",
   "devDependencies": {
     "angular-mocks": "^1.5.0",
